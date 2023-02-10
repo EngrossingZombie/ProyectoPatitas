@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reportar!</title>
+    <% include partials/head %>
+</head>
+
+<body class="body-reportar">
+
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-6 mx-auto p-3">
+                <div class="card card-shadow sombra">
+                    <div class="card-header text-center">
+                        <img class="my-3" src="patitas.svg" style="width: 30px; height: 30px;"><h3>Reportar mascota perdida</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/reportar" method="post" enctype="multipart/form-data">
+                            <div class="input-group m-3">
+                                <div class="custom-file">
+                                    <label class="text-secondary">Selecciona hasta 3 fotos</label>
+                                    <hr>
+                                    <input type="file" name="image" required multiple class="custom-file-input form-control mx-auto" id="inputGroupFile02">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group mb-3 p-3">
+                                <input type="text" name="title" placeholder="Nombre de la mascota" class="form-control">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <div class="input-group my-3">
+                                    <label for="departamento" class="text-uppercase mx-3">Región</label>
+                                    <select class="custom-select" name="region" id="departamento" class="custom-select" required>
+                                      <!-- cargaremos las etiquetas de option con javascript -->
+                                    </select>
+                                  </div>
+                    
+                                  <div class="input-group my-3">
+                                    <label for="provincia" class="text-uppercase mx-3">Comuna</label>
+                                    <select name="comuna" id="provincia" class="custom-select" required>
+                                      <!-- cargaremos las etiquetas de option con javascript -->
+                                    </select>
+                                  </div>
+                            </div>
+                            <div class="form-group m-3">
+                                <input type="text" name="recompensa" placeholder="Recompensa (Opcional)" class="form-control">
+                            </div>
+                            <div class="form-group m-3">
+                                <textarea name="descripcion" placeholder="Descripción indicando características de la mascota" class="form-control"></textarea>
+                            </div>
+                            <hr>
+                            <div class="form-group m-3">
+                                <textarea name="description" placeholder="Dirección de referencia de dónde fue vista por última vez la mascota" class="form-control"></textarea>
+                            </div>
+                            <hr>
+                            <div class="form-group d-grid">
+                                <button class="btn btn-danger float-end">
+                                    Reportar
+                                </button>
+                                <a href="/profile" type="button" class="btn btn-light btn-block mt-2">
+                                    Volver atrás
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="js/comunas.js"></script>
+</html>

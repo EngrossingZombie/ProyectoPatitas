@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Mi perfil</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body id="profile-body">
+  <div class="container py-4 py-xl-5 ">
+
+    <div>
+      <a class="btn btn-secondary btn-sm text-dark glass animate__animated animate__fadeInLeft" role="button"
+        href="/">Volver al inicio</a>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-md-8 col-xl-6 text-center mx-auto">
+        <img class="mb-3 animate__animated animate__flip" src="patitas.svg" style="width: 60px; height: 60px;">
+        <!-- <hr> -->
+        <h2 class="animate__animated animate__fadeInDown"><strong>¡Hola <%= user.local.name %>!</strong></h2>
+        <p class="w-lg-50 animate__animated animate__fadeInDown">¡Bienvenido/a a tu perfil de patitas!</p>
+      </div>
+    </div>
+    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-4">
+      <div class="col">
+        <div class="card card-shadow sombra animate__animated animate__fadeInDown">
+          <div class="card-body p-4">
+            <div
+              class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <h4 class="card-title">Mi cuenta</h4>
+            <p class="card-text">
+            <p>
+              <img class="img border border-dark rounded" src='<%= "/uploads/"+user.local.foto %>' alt="mifoto"
+                style="height: 150px; width: 180px;"> <br>
+              <hr>
+              <!-- <strong>ID</strong> : <%= user._id %> <br> -->
+              <strong>Correo</strong> : <%= user.local.email %> <br>
+                <!-- <strong>Contraseña</strong> : <%= user.local.password %> <br> -->
+                <strong>Nombre</strong> : <%= user.local.name %> <br>
+                  <strong>Región</strong> : <%= user.local.region %> <br>
+                    <strong>Comuna</strong> : <%= user.local.comuna %> <br>
+
+            </p>
+            </p>
+            <a href="/logout" class="btn btn-secondary glass-button">
+              Cerrar sesión
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="position-absolute top-100 start-50 translate-middle"><img src="paseo.svg"></div>
+
+      <div class="col">
+        <div class="card card-shadow sombra animate__animated animate__fadeInDown">
+          <div class="card-body p-4">
+            <div
+              class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon">
+              <img src="perdido.svg" style="width: 30px; height: 30px;">
+            </div>
+            <h4 class="card-title">Reportar mascota perdida</h4>
+            <p class="card-text">Reporta aquí si tu mascota se perdió, adjuntando los datos solicitados en el formulario
+            </p>
+            <a href="/reportar"><button class="btn btn-danger">
+                Reportar
+              </button></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <div class="card card-shadow sombra animate__animated animate__fadeInDown">
+          <div class="card-body p-4">
+            <div
+              class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon">
+              <img src="dog.svg" style="width: 30px; height: 30px;">
+              </svg>
+            </div>
+            <h4 class="card-title">Reportar mascota encontrada</h4>
+            <p class="card-text">Si encontraste una mascota extraviada, repórtala aquí!</p>
+            <a href="/encontrada"><button class="btn btn-danger">
+                Reportar
+              </button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card card-shadow sombra animate__animated animate__fadeInDown">
+          <div class="card-body p-4">
+            <div
+              class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon">
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M13,18V10L16.5,13.5L17.92,12.08L12,6.16L6.08,12.08L7.5,13.5L11,10V18H13M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z" />
+              </svg>
+              </svg>
+            </div>
+            <h4 class="card-title">Sube aquí a tus mascotas!</h4>
+            <p class="card-text">Aquí en esta sección de Patitas puedes subir las fotos de tus mascotas!</p>
+            <a href="/mismascotas"><button class="btn btn-success">
+                Subir foto
+              </button></a>
+          </div>
+        </div>
+        <div class="card card-shadow sombra animate__animated animate__fadeInDown mt-3">
+          <div class="card-body p-4">
+            <div
+              class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon">
+              <svg style="width:26px;height:26px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M568.2 336.3c-13.12-17.81-38.14-21.66-55.93-8.469l-119.7 88.17h-120.6c-8.748 0-15.1-7.25-15.1-15.99c0-8.75 7.25-16 15.1-16h78.25c15.1 0 30.75-10.88 33.37-26.62c3.25-20-12.12-37.38-31.62-37.38H191.1c-26.1 0-53.12 9.25-74.12 26.25l-46.5 37.74L15.1 383.1C7.251 383.1 0 391.3 0 400v95.98C0 504.8 7.251 512 15.1 512h346.1c22.03 0 43.92-7.188 61.7-20.27l135.1-99.52C577.5 379.1 581.3 354.1 568.2 336.3zM279.3 175C271.7 173.9 261.7 170.3 252.9 167.1L248 165.4C235.5 160.1 221.8 167.5 217.4 179.1s2.121 26.2 14.59 30.64l4.655 1.656c8.486 3.061 17.88 6.095 27.39 8.312V232c0 13.25 10.73 24 23.98 24s24-10.75 24-24V221.6c25.27-5.723 42.88-21.85 46.1-45.72c8.688-50.05-38.89-63.66-64.42-70.95L288.4 103.1C262.1 95.64 263.6 92.42 264.3 88.31c1.156-6.766 15.3-10.06 32.21-7.391c4.938 .7813 11.37 2.547 19.65 5.422c12.53 4.281 26.21-2.312 30.52-14.84s-2.309-26.19-14.84-30.53c-7.602-2.627-13.92-4.358-19.82-5.721V24c0-13.25-10.75-24-24-24s-23.98 10.75-23.98 24v10.52C238.8 40.23 221.1 56.25 216.1 80.13C208.4 129.6 256.7 143.8 274.9 149.2l6.498 1.875c31.66 9.062 31.15 11.89 30.34 16.64C310.6 174.5 296.5 177.8 279.3 175z" />
+              </svg>
+            </div>
+            <h4 class="card-title">Realizar donación</h4>
+            <p class="card-text">Aquí en esta sección de Patitas puedes realizar una donación a cualquier usuario de
+              nuestra comunidad!</p>
+            <a href="/donar"><button class="btn btn-info text-white">
+                Realizar donación
+              </button></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  <div><br><br><br></div>
+  <% let tienehogar = "no"; %>
+  <% hogares.forEach(function (hogares) { %>
+    <% if(hogares.destinatario === user.id){
+      tienehogar = "si";
+     }}); %>
+  <% if(hogares.length > 0 && tienehogar==="si"){ %>
+    <div class="mb-5 card card-shadow p-3 col-md-8 col-xl-11 mx-auto position-relative text-center">
+      <img class="mb-3 text-center mx-auto" src="patitas.svg" style="width: 45px; height: 45px;">
+      <h2 class="text-center text-warning fw-bold">¡Enhorabuena!</h2>
+      <h2 class="text-center fw-bold">¡Te han ofrecido hogar temporal para tus mascotas!</h2>
+      <p class="w-lg-50 text-center fw-bold">Estas personas están buscando ayudarte</p>
+      <table class="table table-hover">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col fw-bold">Usuario</th>
+            <th scope="col fw-bold">Fono</th>
+            <th scope="col fw-bold">Indicaciones</th>
+            <th scope="col fw-bold">Región</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% hogares.forEach(function (hogares) { %>
+              <% if(hogares.destinatario === user.id){ %>
+                <tr>
+                  <td class="mx-auto fw-bold">
+                    <%= hogares.username %>
+                  </td>
+                  <td class="mx-auto">
+                    <%= hogares.fono %>
+                  </td>
+                  <td class="mx-auto">
+                    <%= hogares.indicaciones %>
+                  </td>
+                  <td class="mx-auto">
+                    <%= hogares.region %>
+                  </td>
+                </tr>
+              <% }else{
+  
+              } %>
+        </tbody>
+      </table>
+      <table>
+        <% }); %>
+    </div>
+    <% } %>
+  <hr>
+
+<% if(mascotas.lenght > 0) { %>
+  <div class=" card card-shadow p-3 col-md-8 col-xl-8 mx-auto position-relative text-center">
+    <img class="mb-3 text-center mx-auto" src="patitas.svg" style="width: 45px; height: 45px;">
+    <h2 class="text-center">Mis mascotas</h2>
+    <p class="w-lg-50 text-center">Estas son las mascotas que has agregado</p>
+</div>
+<div class="container py-4 mx-auto">
+    <div class="row">
+      <div class="d-flex flex-wrap">
+
+        <% mascotas.forEach(function (mascotas) { %>
+          <% if(mascotas.usuario==user._id){ %>
+            <div class="card sombra col-md-4 col-sm-12 p-3 animate__animated animate__fadeInDown">
+              <img src="<%= mascotas.path %>" class="card-img-top" alt="<%= mascotas.filename %>">
+              <div class="card-body">
+                <h3>Nombre: </h3>
+                <h5 class="card-title">
+                  <%= mascotas.title %>
+                </h5>
+                <p class="card-text">
+                  <%= mascotas.description %>
+                </p>
+              </div>
+              <div class="card-footer bg-transparent col-6 mx-auto d-grid gap-2"><a href="/mascota/<%= mascotas._id %>"
+                  class="btn btn-primary btn-block">
+                  Ver foto
+                </a></div>
+              <hr>
+              <p>
+                <%= format(mascotas.created_at) %>
+              </p>
+            </div>
+            <% } %>
+          <% }) %>
+    </div>
+  </div>
+</div>
+<% } %>
+
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+<footer class="text-center">
+  <div class="container text-muted py-4 py-lg-5">
+      <ul class="list-inline">
+          <li class="list-inline-item me-4"><a class="link-secondary" href="#">Diseño Web</a></li>
+          <li class="list-inline-item me-4"><a class="link-secondary" href="#">¡Contáctanos!</a></li>
+          <li class="list-inline-item"><a class="link-secondary" href="#">Nuestro compromiso</a></li>
+      </ul>
+      <ul class="list-inline">
+          <li class="list-inline-item me-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                  fill="currentColor" viewBox="0 0 16 16" class="bi bi-facebook">
+                  <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+                  </path>
+              </svg></li>
+          <li class="list-inline-item me-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                  fill="currentColor" viewBox="0 0 16 16" class="bi bi-twitter">
+                  <path
+                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+                  </path>
+              </svg></li>
+          <li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                  fill="currentColor" viewBox="0 0 16 16" class="bi bi-instagram">
+                  <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                  </path>
+              </svg></li>
+      </ul>
+      <p class="mb-0">Copyright © 2022 Patitas</p>
+  </div>
+</footer>
+
+</html>

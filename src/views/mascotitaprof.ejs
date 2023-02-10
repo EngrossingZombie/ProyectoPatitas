@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mis mascotitas</title>
+    <%- include("partials/head") -%>
+</head>
+
+<body class="body-reportar">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card sombra">
+                    <img src="<%= mascotas.path %>" class="card-img-top" alt="<%= mascotas.filename %>">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= mascotas.title %>
+                        </h5>
+                        <p class="card-text">
+                            <%= mascotas.description %>
+                        </p>
+                        <p>
+                            <%= format(mascotas.createdAt) %>
+                        </p>
+                        <% if(user!=null){
+                            if(user._id == mascotas.usuario){ %>
+                       <a href="/mascota/<%= mascotas._id%>/delete" class="btn btn-danger btn-block">
+                            Borrar
+                        </a>
+                        <% }else{ %>
+                        <% console.log(user._id, 'ESTE ES EL USER ID', mascotas.usuario);} %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

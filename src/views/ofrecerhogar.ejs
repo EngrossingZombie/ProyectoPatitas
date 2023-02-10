@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ofrecer hogar</title>
+    <% include partials/head %>
+
+</head>
+
+<body class="body-reportar">
+
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-6 mx-auto p-3">
+                <div class="card card-shadow sombra">
+                    <div class="card-header text-center">
+                        <img class="my-3" src="/patitas.svg" style="width: 30px; height: 30px;">
+                        <h3>Ofrecer hogar</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/ofrecerhogartemporal/<%= id %>" method="post">
+                            <div class="form-group mb-3 ">
+                                <div class="input-group my-3">
+                                    <label for="departamento" class="text-uppercase mx-3">Región</label>
+                                    <select class="custom-select" name="region" id="departamento" class="custom-select"
+                                        required>
+                                        <!-- cargaremos las etiquetas de option con javascript -->
+                                    </select>
+                                </div>
+
+                                <div class="input-group my-3">
+                                    <label for="provincia" class="text-uppercase mx-3">Comuna</label>
+                                    <select name="comuna" id="provincia" class="custom-select" required>
+                                        <!-- cargaremos las etiquetas de option con javascript -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group m-3">
+                                <input type="text" name="fono" placeholder="Número de contacto" class="form-control">
+                            </div>
+                            <hr>
+                            <div class="form-group m-3">
+                                <textarea name="indicaciones" placeholder="Indicaciones para el usuario destinatario"
+                                    class="form-control"></textarea>
+                            </div>
+                            <div class="form-group m-3">
+                                <label for="lname">ID destinatario:</label>
+                            <input type="text" name="destinatario" value="<%= id %>" disabled><br>
+                            </div>
+                            <hr>
+                            <div class="form-group d-grid">
+                                <button class="btn btn-success float-end">
+                                    Enviar invitación
+                                </button>
+                                <a href="/profile" type="button" class="btn btn-light btn-block mt-2">
+                                    Volver atrás
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="/js/comunas.js" defer></script>
+
+</html>

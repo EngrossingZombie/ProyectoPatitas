@@ -1,0 +1,251 @@
+.gradiente-perritos {
+  background: linear-gradient(270deg, #d4eaf9, #f2e2fb, #b0c6ff);
+  background-size: 600% 600%;
+  width: 100%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+
+
+.gradiente {
+  background: linear-gradient(228deg, #1768be, #1c56c2, #18cfde);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 31s ease infinite;
+  -moz-animation: AnimationName 31s ease infinite;
+  animation: AnimationName 31s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 90%
+  }
+
+  50% {
+    background-position: 100% 11%
+  }
+
+  100% {
+    background-position: 0% 90%
+  }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 90%
+  }
+
+  50% {
+    background-position: 100% 11%
+  }
+
+  100% {
+    background-position: 0% 90%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 90%
+  }
+
+  50% {
+    background-position: 100% 11%
+  }
+
+  100% {
+    background-position: 0% 90%
+  }
+}
+
+.body-reportar {
+  background: linear-gradient(270deg, #c8c8c8, #8e9ef5, #f2bcfb) !important;
+  background-size: 600% 600% !important;
+
+  -webkit-animation: AnimationName 30s ease infinite !important;
+  animation: AnimationName 30s ease infinite !important;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.sombra {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.donar-glass {
+  background: rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 0 8px 10px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.total:hover {
+  background-color: rgba(255, 255, 255, 0.589);
+}
+
+
+
+.glass-button {
+  display: inline-block;
+  border: 0;
+  text-decoration: none;
+  border-radius: 9px;
+  background-color: rgba(218, 158, 158, 0.986);
+  border: 1px solid rgba(255, 255, 255, 0.308);
+  backdrop-filter: blur(30px);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.glass-button:hover {
+  background-color: rgba(253, 0, 0, 0.616);
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.logo {
+  width: 160px;
+  height: 60px;
+}
+
+#profile-body {
+  background: linear-gradient(270deg, #c1d4fb, #c4cdff, #fec8ff);
+  background-size: 600% 600%;
+  /* background-image: url(../paseo.svg); */
+
+  -webkit-animation: AnimationName 19s ease infinite;
+  animation: AnimationName 19s ease infinite;
+}
+
+#tarjeta-body {
+  background: linear-gradient(270deg, #c1d4fb, #c4cdff, #fec8ff);
+  background-size: 600% 600%;
+  /* background-image: url(../paseo.svg); */
+
+  -webkit-animation: AnimationName 19s ease infinite;
+  animation: AnimationName 19s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.card-shadow {
+  background: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 8px 12px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}

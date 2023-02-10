@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <% include partials/head %>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<!-- <script src="/js/conditional-field.min.js"></script>
+<script src="/js/condiciones.js"></script> -->
+
+<body class="signup">
+  <div class="container-fluid">
+    <div class="row mh-100vh">
+      <div id="login-block"
+        class="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0">
+        <div class="m-auto w-lg-75 w-xl-50">
+          <h2 class="text-primary fw-light mb-5"><i class="fas fa-paw"></i><strong> Regístrate</strong></h2>
+          <% if (message.length > 0) { %>
+          <div class="alert alert-danger">
+            <%= message %>
+          </div>
+          <% } %>
+
+          <!-- form -->
+          <form action="/signupAdmin" method="post" enctype="multipart/form-data">
+            <div class="form-group mb-3">
+              <label class="form-label text-secondary">Nombre</label>
+              <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+              <label class="form-label text-secondary">RUT</label>
+              <input type="text" name="rut" class="form-control" placeholder="11.111.111-1">
+            </div>
+            <div class="form-group mb-3">
+              <label class="form-label text-secondary">Correo</label>
+              <input type="email" name="email" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+              <label class="form-label text-secondary">Foto</label>
+              <input id="foto" type="file" name="image" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+              <label for="password" class="form-label text-secondary">Contraseña</label>
+              <input id="pswd1" type="password" name="password" onChange="onChange()" class="form-control" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="password" class="form-label text-secondary">Confirmar contraseña</label>
+              <input id="pswd2" type="password" name="confirm" onChange="onChange()" class="form-control" required>
+            </div>
+            <div class="card-body">
+              <br>
+              <div class="input-group my-3">
+                <label for="departamento" class="text-uppercase text-primary mx-3">Región</label>
+                <select class="custom-select" name="region" id="departamento" class="custom-select" required>
+                  <!-- cargaremos las etiquetas de option con javascript -->
+                </select>
+              </div>
+
+              <div class="input-group my-3">
+                <label for="provincia" class="text-uppercase text-primary mx-3">Comuna</label>
+                <select name="comuna" id="provincia" class="custom-select">
+                  <!-- cargaremos las etiquetas de option con javascript -->
+                </select>
+              </div>
+            </div>
+            <hr>
+
+            <input type="submit" class="btn btn-primary mt-2">
+          </form>
+
+          <hr>
+          <div class="text-center">
+            <p>Ya tienes cuenta? <a href="/login">Entrar</a></p>
+            <p><a href="/">Volver al inicio</a>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 d-flex align-items-end" id="bg-block"
+        style="background: url(&quot;assets/img/pexels-chevanon-photography-1108099.jpg&quot;) center no-repeat;filter: blur(2px) contrast(63%);">
+        <p class="ms-auto small text-dark mb-2"><em>Patitas</em><br></p>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  function onChange() {
+      console.log('cambio')
+      const password = document.querySelector('input[name=password]');
+      const confirm = document.querySelector('input[name=confirm]');
+      console.log(password,confirm)
+      if (confirm.value === password.value) {
+        confirm.setCustomValidity('');
+        console.log('Contraseñas coinciden')
+      } else {
+        confirm.setCustomValidity('¡Las contraseñas deben coincidir!');
+      }
+    }
+
+
+  let $departemento = document.getElementById('departamento')
+  let $provincia = document.getElementById('provincia')
+
+  let departamentos = ['Región Metropolitana', 'Región de Valparaíso', 'Región de Coquimbo']
+  let provincias = ['Santiago', 'Conchalí', 'Huechuraba', 'Independencia', 'Quilicura', 'Recoleta', 'Renca',
+    'Las Condes', 'Lo Barnechea', 'Providencia', 'Vitacura', 'La Reina', 'Macul', 'Peñalolén', 'La Florida',
+    'La Granja', 'El Bosque', 'La Cisterna', 'La Pintana', 'San Ramón', 'Lo espejo', 'Pedro Aguirre Cerda',
+    'San Joaquín', 'San Miguel', 'Cerrillos', 'Estación Central', 'Maipú', 'Cerro Navia', 'Lo Prado', 'Pudahuel',
+    'Puente Alto', 'Quinta Normal', 'Isla de Pascua', 'Los Andes', 'Marga Marga', 'Petorca', 'Quillota',
+    'San Antonio', 'San Felipe de Aconcagua', 'Valparaíso', 'Illapel', 'Canela', 'Los Vilos', 'Salamanca',
+    'La Serena', 'Coquimbo', 'Andacollo', 'La Higuera', 'Paihuano', 'Vicuña', 'Ovalle', 'Combarbalá', 'Monte Patria',
+    'Punitaqui', 'Río Hurtado'
+  ]
+
+  function mostrarLugares(arreglo, lugar) {
+    let elementos = '<option selected disables>--Seleccione--</option>'
+
+    for (let i = 0; i < arreglo.length; i++) {
+      elementos += '<option value="' + arreglo[i] + '">' + arreglo[i] + '</option>'
+    }
+
+    lugar.innerHTML = elementos
+  }
+
+  mostrarLugares(departamentos, $departemento)
+
+  function recortar(array, inicio, fin, lugar) {
+    let recortar = array.slice(inicio, fin)
+    mostrarLugares(recortar, lugar)
+  }
+
+  $departemento.addEventListener('change', function () {
+    let valor = $departemento.value
+
+    switch (valor) {
+      case 'Región Metropolitana':
+        recortar(provincias, 0, 32, $provincia)
+        break
+      case 'Región de Valparaíso':
+        recortar(provincias, 33, 40, $provincia)
+        break
+      case 'Región de Coquimbo':
+        recortar(provincias, 40, 55, $provincia)
+        break
+    }
+
+    $distrito.innerHTML = ''
+
+  })
+</script>
+
+</html>

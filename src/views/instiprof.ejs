@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= i.nombre %></title>
+    <%- include("partials/head") -%>
+</head>
+
+<body>
+
+    <div class="container p-4 mx-auto">
+        <div class="row">
+            <div class="col-12 d-flex flex-wrap">
+
+                <div class="card col-4">
+                    <img src="<%= i.fotos[0].path %>" class="card-img-top" alt="<%= i.filename %>">
+                    <div class="card-body">
+
+
+                    </div>
+                </div>
+                <% if (i.fotos[1]){ %>
+                <div class="card col-4">
+                    <img src="<%= i.fotos[1].path %>" class="card-img-top" alt="<%= i.filename %>">
+                    <div class="card-body">
+
+                        <% } %>
+                    </div>
+                </div>
+                <% if (i.fotos[2]){ %>
+                <div class="card col-4">
+                    <img src="<%= i.fotos[2].path %>" class="card-img-top" alt="<%= i.filename %>">
+                    <div class="card-body">
+
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="m-3 border p-3 d-grid gap-2">
+            <% if(user!=null){ %>
+            <%  if(user._id == i.userid){ %>
+            <a href="/institucion/<%= i._id %>/delete" class="btn btn-danger btn-block">
+                Borrar la institución
+            </a>
+            <% }}; %>
+            <a href="/instituciones" type="button" class="btn btn-light btn-block">
+                Volver atrás
+            </a>
+        <p>Autor: <strong><%= i.username %></strong></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

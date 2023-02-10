@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Patitas - Perrito perdido</title>
+    <%- include("partials/head") -%>
+</head>
+
+<body>
+
+    <div class="container p-4 mx-auto">
+        <div class="row">
+            <div class="col-12 d-flex flex-wrap">
+
+                <div class="card col-4">
+                    <img src="<%= post.fotos[0].path %>" class="card-img-top" alt="<%= post.filename %>">
+                    <div class="card-body">
+
+
+                    </div>
+                </div>
+                <% if (post.fotos[1]){ %>
+                <div class="card col-4">
+                    <img src="<%= post.fotos[1].path %>" class="card-img-top" alt="<%= post.filename %>">
+                    <div class="card-body">
+
+                        <% } %>
+                    </div>
+                </div>
+                <% if (post.fotos[2]){ %>
+                <div class="card col-4">
+                    <img src="<%= post.fotos[2].path %>" class="card-img-top" alt="<%= post.filename %>">
+                    <div class="card-body">
+
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="m-3 border p-3 d-grid gap-2">
+            <% if(user!=null){ %>
+            <%  if(user._id == post.userid){ %>
+            <a href="/image/<%= post._id %>/delete" class="btn btn-danger btn-block">
+                Borrar mi post
+            </a>
+            <% }}; %>
+            <a href="/ofrecerhogar/<%= post._id %>/" class="btn btn-warning btn-block">
+                Ofrecer hogar temporal
+            </a>
+            <a href="/" type="button" class="btn btn-light btn-block">
+                Volver atrás
+            </a>
+        <p>Autor: <strong><%= post.username %></strong></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

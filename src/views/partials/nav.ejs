@@ -1,0 +1,27 @@
+<nav class="navbar bg-white navbar-light navbar-expand-md py-3">
+    <div class="container"><img class="logo" src="logo.jpg">
+        
+        <div class="collapse navbar-collapse" id="navcol-3">
+            <ul class="navbar-nav mr-auto mt-2 ml-3 mt-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="/">EXTRAVIADOS</a></li>
+                <li class="nav-item"><a class="nav-link" href="/encontrados">ENCONTRADOS</a></li>
+                <li class="nav-item"><a class="nav-link" href="/instituciones">INSTITUCIONES</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">NOSOTROS</a></li>
+            </ul>
+        </div>
+        <%  %>
+        <% if(user === undefined){ %>
+        <a class="btn btn-primary btn-sm text-white" role="button" href="/login">Inicia sesión</a><a
+            class="btn btn-light btn-sm mx-1" role="button" href="/signup">Regístrate</a>
+    </div>
+    <% }
+            else{
+                %>
+
+    <a class="btn text-dark sombra glass-button" role="button" href="/profile"><%= user.local.name %></a>
+    <% } %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navcol-3"
+            aria-controls="navcol-3" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+</nav>
